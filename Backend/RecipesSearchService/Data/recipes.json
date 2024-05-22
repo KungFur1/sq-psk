@@ -1,0 +1,189 @@
+[
+    {
+        "id": "cbdc3659-30b6-449b-b998-84f2216c3e86",
+        "userId": "f1819dad-76e3-41b3-9a76-e7fa6b974cc4",
+        "title": "Summer Peach Salad",
+        "shortDescription": "A refreshing salad featuring ripe peaches and a tangy vinaigrette.",
+        "ingredientsList": "3 ripe peaches, 1 cup arugula, 1/2 cup crumbled feta cheese, 1/4 cup sliced almonds, 2 tablespoons olive oil, 1 tablespoon balsamic vinegar",
+        "cookingSteps": "Slice peaches and combine with arugula. Top with feta and almonds. Whisk together olive oil and vinegar, drizzle over salad, and serve immediately.",
+        "imageUrl": "https://fastly.picsum.photos/id/234/200/200.jpg?hmac=xPu1ioX9SWsHBaICVti0qPl5c7fPKvztdkSxpv8w6oo",
+        "createdAt": "2024-05-22T10:58:01.091994Z",
+        "updatedAt": "2024-05-22T10:58:01.091995Z"
+    },
+    {
+        "id": "4a842e83-29b9-4e2a-a8af-f71f7e7ca3eb",
+        "userId": "c3d1eb34-b848-48ca-b277-ed3bb3e242ae",
+        "title": "Classic Beef Stroganoff",
+        "shortDescription": "A rich and creamy dish with tender strips of beef and mushrooms.",
+        "ingredientsList": "500g beef sirloin, 1 onion, 250g mushrooms, 1 cup beef broth, 1/2 cup sour cream, 2 tablespoons mustard, 300g egg noodles",
+        "cookingSteps": "Brown beef strips and set aside. Sauté onion and mushrooms. Return beef to pan, add broth, and simmer. Stir in sour cream and mustard, serve over cooked noodles.",
+        "imageUrl": "https://fastly.picsum.photos/id/889/200/200.jpg?hmac=mzo0mKfXHC9qb2dLw47jTrXZmlF9g6c6EuUFOWz0T5U",
+        "createdAt": "2024-05-22T10:58:01.092182Z",
+        "updatedAt": "2024-05-22T10:58:01.092182Z"
+    },
+    {
+        "id": "6a5d5afe-adca-41b8-b18e-80dd5c9c7b86",
+        "userId": "cb8c4501-be84-4377-98a9-f40de26f1f84",
+        "title": "Vegan Chocolate Cake",
+        "shortDescription": "A moist and decadent cake that's completely dairy-free and egg-free.",
+        "ingredientsList": "1 cup almond milk, 1 teaspoon apple cider vinegar, 3/4 cup granulated sugar, 1/3 cup vegetable oil, 1 teaspoon vanilla extract, 1 cup all-purpose flour, 1/3 cup cocoa powder, 1/2 teaspoon baking soda, 1/4 teaspoon salt",
+        "cookingSteps": "Mix almond milk and vinegar. Add sugar, oil, vanilla. Combine flour, cocoa, baking soda, salt, mix into wet ingredients. Bake at 350°F for 25 minutes.",
+        "imageUrl": "https://fastly.picsum.photos/id/61/200/200.jpg?hmac=RL-JLeHTLsWK7354qjYNQ1iuDxeoCv-kYRTUYun2h34",
+        "createdAt": "2024-05-22T10:58:01.092182Z",
+        "updatedAt": "2024-05-22T10:58:01.092182Z"
+    },
+    {
+        "id": "56a47da4-6952-4581-901b-c0340a130843",
+        "userId": "3840e2da-730e-43d1-897a-4e4f4fa4c003",
+        "title": "Mediterranean Quinoa Salad",
+        "shortDescription": "A light and healthy salad packed with protein and fresh vegetables.",
+        "ingredientsList": "1 cup quinoa, 1 cucumber, 2 tomatoes, 1/2 red onion, 1/4 cup olives, 1/4 cup feta cheese, 2 tablespoons lemon juice, 3 tablespoons olive oil",
+        "cookingSteps": "Cook quinoa. Chop vegetables and combine with quinoa. Whisk together lemon juice and olive oil, pour over salad. Top with feta and olives.",
+        "imageUrl": "https://fastly.picsum.photos/id/254/200/200.jpg?hmac=wM9u9N0tgdWKFIr8MxBLr8rLoV0JjUUKLk32XFV8agQ",
+        "createdAt": "2024-05-22T10:58:01.092183Z",
+        "updatedAt": "2024-05-22T10:58:01.092183Z"
+    },
+    {
+        "id": "2f5339b9-f543-4e76-98f1-2701b193fedc",
+        "userId": "6810c260-4849-4256-af7c-434d9c894b15",
+        "title": "Mango Avocado Salsa",
+        "shortDescription": "A zesty and fresh salsa with chunks of mango and avocado.",
+        "ingredientsList": "2 ripe mangoes, 1 ripe avocado, 1/4 cup finely chopped red onion, 1/2 cup chopped cilantro, Juice of 1 lime, Salt to taste",
+        "cookingSteps": "Dice mangoes and avocado, and combine with onion, cilantro, and lime juice. Season with salt and mix well.",
+        "imageUrl": "https://fastly.picsum.photos/id/132/200/200.jpg?hmac=meVrCoOURNB7iKK3Mv-yuRrvxvXgv4h2vIRLM4sKwK4",
+        "createdAt": "2024-05-22T10:58:01.092184Z",
+        "updatedAt": "2024-05-22T10:58:01.092184Z"
+    },
+    {
+        "id": "90f04a00-0e18-419c-8eb6-a9d47c0d65f0",
+        "userId": "f3466fdc-f38b-4ff7-87f9-85ae3c34e08f",
+        "title": "Vegetarian Chili",
+        "shortDescription": "A hearty chili made with beans, tomatoes, and a blend of spices.",
+        "ingredientsList": "1 can black beans, 1 can kidney beans, 1 large can diced tomatoes, 1 onion, 2 cloves garlic, 1 tablespoon chili powder",
+        "cookingSteps": "Sauté onion and garlic, add beans and tomatoes. Season with chili powder and simmer.",
+        "imageUrl": "https://fastly.picsum.photos/id/264/200/200.jpg?hmac=O4sRY3iZeFvmPRuanICCCZi-CDz0HdRHMsHttvNCgmw",
+        "createdAt": "2024-05-22T10:58:01.092185Z",
+        "updatedAt": "2024-05-22T10:58:01.092185Z"
+    },
+    {
+        "id": "8f591bf4-0259-4037-a6d8-1e345f36edd4",
+        "userId": "aa3648f3-fa81-44fa-b153-7c61102d2286",
+        "title": "Spicy Grilled Chicken",
+        "shortDescription": "Juicy chicken thighs marinated in a spicy sauce and grilled to perfection.",
+        "ingredientsList": "8 chicken thighs, 3 tablespoons hot sauce, 2 tablespoons olive oil, 1 tablespoon paprika, Salt and pepper",
+        "cookingSteps": "Marinate chicken thighs in hot sauce, olive oil, paprika, salt, and pepper. Grill until fully cooked.",
+        "imageUrl": "https://fastly.picsum.photos/id/625/200/200.jpg?hmac=oIwf4IzbglfXYZo-9VXZTHju2-ox3D-Vooeuioav_nw",
+        "createdAt": "2024-05-22T10:58:01.092185Z",
+        "updatedAt": "2024-05-22T10:58:01.092185Z"
+    },
+    {
+        "id": "7cd1afb3-24a7-4a80-b568-48d47cae207d",
+        "userId": "d3cdb1f7-8d63-490c-b741-cf618e5b09f0",
+        "title": "Hearty Chicken Soup",
+        "shortDescription": "A comforting soup with chicken, vegetables, and noodles, perfect for a chilly day.",
+        "ingredientsList": "2 chicken breasts, 3 cups chicken broth, 1 cup diced carrots, 1 cup noodles, 1 teaspoon thyme",
+        "cookingSteps": "Boil chicken until cooked, shred. Simmer broth with vegetables and noodles until tender. Stir in chicken and thyme.",
+        "imageUrl": "https://fastly.picsum.photos/id/996/200/200.jpg?hmac=nRtkfqKyD3p2uHiFO5LmGt31UcH3NKWg80H5yUkZ8_k",
+        "createdAt": "2024-05-22T10:58:01.092186Z",
+        "updatedAt": "2024-05-22T10:58:01.092187Z"
+    },
+    {
+        "id": "f2672eee-4c63-4cbe-8943-709ca9dbb56b",
+        "userId": "1444fe2a-6884-4011-8f37-c585cff34b0d",
+        "title": "Chocolate Banana Smoothie",
+        "shortDescription": "A smooth and creamy smoothie with ripe bananas and rich chocolate.",
+        "ingredientsList": "2 ripe bananas, 1 cup milk, 2 tablespoons cocoa powder, 1 tablespoon honey",
+        "cookingSteps": "Blend all ingredients until smooth.",
+        "imageUrl": "https://fastly.picsum.photos/id/594/200/200.jpg?hmac=owYWnk-K1Yd10c-pUQt8S_02BsTYKsMvSxMWNexClq8",
+        "createdAt": "2024-05-22T10:58:01.092186Z",
+        "updatedAt": "2024-05-22T10:58:01.092186Z"
+    },
+    {
+        "id": "fa41dd48-b355-49e8-8bd8-767594fba3cb",
+        "userId": "f25dfd3e-77b5-488f-b11c-c5e8c950a231",
+        "title": "Simple Greek Salad",
+        "shortDescription": "A traditional Greek salad with fresh vegetables and feta cheese.",
+        "ingredientsList": "3 tomatoes, 1 cucumber, 1/2 red onion, 1/4 cup olives, 100g feta cheese, 2 tablespoons olive oil",
+        "cookingSteps": "Chop vegetables, combine with olives and crumbled feta. Drizzle with olive oil.",
+        "imageUrl": "https://fastly.picsum.photos/id/809/200/200.jpg?hmac=2U0kkZGtbw4L4bQc3aC8cZA6ywfn2MvR0d-YC4ITcI8",
+        "createdAt": "2024-05-22T10:58:01.092186Z",
+        "updatedAt": "2024-05-22T10:58:01.092186Z"
+    },
+    {
+        "id": "f01b6bce-77ef-441b-bdb6-630c00c0b7f7",
+        "userId": "5f111d5b-7716-45eb-ae50-1774992c61f8",
+        "title": "Spring Vegetable Stir Fry",
+        "shortDescription": "A vibrant dish of fresh spring vegetables lightly sautéed with soy sauce and garlic.",
+        "ingredientsList": "2 cups mixed spring vegetables, 2 tablespoons soy sauce, 1 tablespoon minced garlic, 1 teaspoon sesame oil",
+        "cookingSteps": "Stir fry vegetables in oil with garlic until crisp-tender. Drizzle with soy sauce before serving.",
+        "imageUrl": "https://fastly.picsum.photos/id/860/200/200.jpg?hmac=xEnSgZhxWVFOWiVCBQzYpKUH7S5nFb7-QTZ8Hfqwq4M",
+        "createdAt": "2024-05-22T10:58:01.092186Z",
+        "updatedAt": "2024-05-22T10:58:01.092186Z"
+    },
+    {
+        "id": "a0d7c72b-0d91-441b-b42b-d7a56acd59bd",
+        "userId": "2950af60-d8a0-4bc2-b0a2-fc8df482e9ee",
+        "title": "Vegetarian Chili",
+        "shortDescription": "A rich and hearty chili made with beans, tomatoes, and an assortment of vegetables.",
+        "ingredientsList": "1 can black beans, 1 can diced tomatoes, 1 cup corn, 1 onion, 2 cloves garlic, 1 tablespoon chili powder",
+        "cookingSteps": "Sauté onion and garlic, add beans, tomatoes, and corn. Simmer with chili powder for 30 minutes.",
+        "imageUrl": "https://fastly.picsum.photos/id/838/200/200.jpg?hmac=a2ZUJPqhEFH-OzhHFaKdtDdV2XnIE7t1tP2iXnP5Fj0",
+        "createdAt": "2024-05-22T10:58:01.092187Z",
+        "updatedAt": "2024-05-22T10:58:01.092187Z"
+    },
+    {
+        "id": "319cc08e-a91c-40c3-88cf-7a3c3230c5e0",
+        "userId": "360b9e1b-429e-4e1d-b914-67543ab71d76",
+        "title": "Maple-Glazed Salmon",
+        "shortDescription": "Delicious salmon fillets with a sweet maple syrup glaze, broiled to a golden finish.",
+        "ingredientsList": "2 salmon fillets, 1/4 cup maple syrup, 1 tablespoon soy sauce, 1 teaspoon garlic powder",
+        "cookingSteps": "Mix maple syrup, soy sauce, and garlic powder. Brush on salmon and broil until cooked through.",
+        "imageUrl": "https://fastly.picsum.photos/id/565/200/200.jpg?hmac=QvKo8qgzFFNcZoXCpT0CNMDTwWd3ynwqLXxrzK2o8fw",
+        "createdAt": "2024-05-22T10:58:01.092187Z",
+        "updatedAt": "2024-05-22T10:58:01.092187Z"
+    },
+    {
+        "id": "c42438cd-2726-4867-8a44-090fb8bf2358",
+        "userId": "9a3fe071-7c69-41b3-8bcf-9fdc5c435f22",
+        "title": "Spiced Lamb Kebabs",
+        "shortDescription": "Juicy lamb kebabs marinated in a spicy mixture and grilled to perfection.",
+        "ingredientsList": "500g diced lamb, 2 tablespoons curry paste, 1 onion, 1 green bell pepper, 1 cup yogurt",
+        "cookingSteps": "Marinate lamb in spices and yogurt overnight. Thread onto skewers with vegetables and grill.",
+        "imageUrl": "https://fastly.picsum.photos/id/527/200/200.jpg?hmac=pt4SE0tD3d9wOZOKl-3uFHKRXPwF77K_UHZATkDnP5k",
+        "createdAt": "2024-05-22T10:58:01.092187Z",
+        "updatedAt": "2024-05-22T10:58:01.092187Z"
+    },
+    {
+        "id": "4be1863d-0336-491b-90b7-a16339c41018",
+        "userId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+        "title": "TEST",
+        "shortDescription": "A fiery dish of noodles tossed with a spicy chili oil sauce and Sichuan peppercorns.",
+        "ingredientsList": "200g noodles, 2 tablespoons sesame oil, 3 garlic cloves, 1 tablespoon grated ginger, 2 tablespoons soy sauce, 1 tablespoon chili oil, 1 teaspoon Sichuan peppercorns",
+        "cookingSteps": "Cook noodles. Sauté garlic and ginger in sesame oil. Add soy sauce, chili oil, and peppercorns. Toss noodles in the sauce and serve.",
+        "imageUrl": "https://fastly.picsum.photos/id/268/200/200.jpg?hmac=I5JAWzISJc5x0jlDhEngvCIwyM0zxRh22iIIzHqOT80",
+        "createdAt": "2024-05-22T12:42:48.266844Z",
+        "updatedAt": "2024-05-22T12:42:48.266844Z"
+    },
+    {
+        "id": "6ba322d1-d541-4a96-bb65-08a6fa39e95a",
+        "userId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+        "title": "TEST-TITLE",
+        "shortDescription": "TEST-SHORT-DESCRIPTION",
+        "ingredientsList": "TEST-INGREDIENTS-LIST",
+        "cookingSteps": "TEST-COOKING-STEPS",
+        "imageUrl": "https://fastly.picsum.photos/id/268/200/200.jpg?hmac=I5JAWzISJc5x0jlDhEngvCIwyM0zxRh22iIIzHqOT80",
+        "createdAt": "2024-05-22T12:44:55.350788Z",
+        "updatedAt": "2024-05-22T12:44:55.350789Z"
+    },
+    {
+        "id": "91359de5-1896-4614-9338-ae8abc0d6fd1",
+        "userId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+        "title": "TEST-TITLE",
+        "shortDescription": "TEST-SHORT-DESCRIPTION",
+        "ingredientsList": "TEST-INGREDIENTS-LIST",
+        "cookingSteps": "TEST-COOKING-STEPS",
+        "imageUrl": "https://fastly.picsum.photos/id/268/200/200.jpg?hmac=I5JAWzISJc5x0jlDhEngvCIwyM0zxRh22iIIzHqOT80",
+        "createdAt": "2024-05-22T12:46:43.776976Z",
+        "updatedAt": "2024-05-22T12:46:43.776977Z"
+    }
+]
