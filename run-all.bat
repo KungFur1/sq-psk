@@ -7,3 +7,7 @@ REM 2. Starting RecipesService
 cd /D "%~dp0"
 cd ./Backend/RecipesService
 start "Recipes Service" cmd /K dotnet watch
+REM 3. Starting RecipesSearchService
+cd /D "%~dp0"
+cd ./Backend/RecipesSearchService
+start "Recipes Search Service" cmd /K dotnet watch
