@@ -7,7 +7,11 @@ dotnet new gitignore
 :: search service setup
 dotnet new webapi -o Backend/RecipesSearchService
 dotnet sln add Backend/RecipesSearchService
+:: contracts class library setup
 dotnet new classlib -o Backend/Contracts
 dotnet sln add Backend/Contracts
 :: run in RecipesService and RecipesSearchService folders:
 dotnet add reference ../../Backend/Contracts
+:: auth service setup
+dotnet new webapi -o Backend/AuthService
+dotnet sln add Backend/AuthService
