@@ -12,4 +12,5 @@ public class RecipeSearchItem : Entity
     public string CookingSteps { get; set; }
     public string ImageUrl { get; set; }
     public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }

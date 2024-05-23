@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using MongoDB.Entities;
 using RecipesSearchService.Models;
+using RecipesSearchService.Services;
 
 namespace RecipesSearchService.Data;
 
@@ -20,21 +21,13 @@ public static class DbInitializer
 
         var count = await DB.CountAsync<RecipeSearchItem>();
 
-        if (count != 0)
-        {
-            Console.WriteLine("DbInitializer: data present, no need to seed...");
-            return;
-        }
-        else
-        {
-            Console.WriteLine("DbInitializer: no data present, attempting to seed...");
+        using var scope = app.Services.CreateScope();
+        var httpClient = scope.ServiceProvider.GetRequiredService<RecipesServiceHttpClient>();
 
-            var itemData = await File.ReadAllTextAsync("Data/recipes.json");
-            var options = new JsonSerializerOptions{PropertyNameCaseInsensitive=true};
-            var items = JsonSerializer.Deserialize<List<RecipeSearchItem>>(itemData, options);
-            await DB.SaveAsync(items);
+        Console.WriteLine("DbInitializer: calling get missing from recipes service...");
+        var missingRecipeSearchItems = await httpClient.GetMissingFromRecipesService();
+        Console.WriteLine($"DbInitializer: {missingRecipeSearchItems.Count} items returned from recipes service...");
 
-            Console.WriteLine("DbInitializer: added seed data...");
-        }
+        if (missingRecipeSearchItems.Count > 0) await DB.SaveAsync(missingRecipeSearchItems);
     }
 }
