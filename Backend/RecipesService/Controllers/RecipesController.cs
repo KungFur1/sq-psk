@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipesService.Data;
@@ -21,13 +22,16 @@ public class RecipesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<RecipeResponseDto>>> GetAllRecipes()
+    public async Task<ActionResult<List<RecipeResponseDto>>> GetAllRecipes(string date)
     {
-        var recipes = await _recipesDbContext.Recipes
-            .OrderBy(x => x.CreatedAt)
-            .ToListAsync();
+        var query = _recipesDbContext.Recipes.OrderBy(x => x.Title).AsQueryable();
 
-        return _mapper.Map<List<RecipeResponseDto>>(recipes);
+        if (!string.IsNullOrEmpty(date))
+        {
+            query = query.Where(x => x.UpdatedAt.CompareTo(DateTime.Parse(date).ToUniversalTime()) > 0);
+        }
+
+        return await query.ProjectTo<RecipeResponseDto>(_mapper.ConfigurationProvider).ToListAsync();
     }
 
     [HttpGet]
