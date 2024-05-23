@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Contracts;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipesService.Data;
@@ -13,21 +16,26 @@ public class RecipesController : ControllerBase
 {
     private readonly RecipesDbContext _recipesDbContext;
     private readonly IMapper _mapper;
+    private readonly IPublishEndpoint _publishEndpoint;
 
-    public RecipesController(RecipesDbContext recipesDbContext, IMapper mapper)
+    public RecipesController(RecipesDbContext recipesDbContext, IMapper mapper, IPublishEndpoint publishEndpoint)
     {
         _recipesDbContext = recipesDbContext;
         _mapper = mapper;
+        _publishEndpoint = publishEndpoint;
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<RecipeResponseDto>>> GetAllRecipes()
+    public async Task<ActionResult<List<RecipeResponseDto>>> GetAllRecipes(string date)
     {
-        var recipes = await _recipesDbContext.Recipes
-            .OrderBy(x => x.CreatedAt)
-            .ToListAsync();
+        var query = _recipesDbContext.Recipes.OrderBy(x => x.Title).AsQueryable();
 
-        return _mapper.Map<List<RecipeResponseDto>>(recipes);
+        if (!string.IsNullOrEmpty(date))
+        {
+            query = query.Where(x => x.UpdatedAt.CompareTo(DateTime.Parse(date).ToUniversalTime()) > 0);
+        }
+
+        return await query.ProjectTo<RecipeResponseDto>(_mapper.ConfigurationProvider).ToListAsync();
     }
 
     [HttpGet]
@@ -50,11 +58,13 @@ public class RecipesController : ControllerBase
         recipe.UserId = Guid.Parse("ffffffff-ffff-ffff-ffff-ffffffffffff");
 
         _recipesDbContext.Add(recipe);
+        var newRecipe = _mapper.Map<RecipeResponseDto>(recipe);
+        await _publishEndpoint.Publish(_mapper.Map<RecipeCreated>(newRecipe));
         bool succesful = await _recipesDbContext.SaveChangesAsync() > 0;
 
         if (!succesful) return StatusCode(500, "Database operation failed");
 
-        return CreatedAtAction(nameof(GetRecipeById), new {recipe.Id}, _mapper.Map<RecipeResponseDto>(recipe));
+        return CreatedAtAction(nameof(GetRecipeById), new {recipe.Id}, newRecipe);
     }
 
     [HttpPut]
@@ -73,7 +83,9 @@ public class RecipesController : ControllerBase
         recipe.IngredientsList = recipeUpdateDto.IngredientsList ?? recipe.IngredientsList;
         recipe.CookingSteps = recipeUpdateDto.CookingSteps ?? recipe.CookingSteps;
         recipe.ImageUrl = recipeUpdateDto.ImageUrl ?? recipe.ImageUrl;
+        recipe.UpdatedAt = DateTime.UtcNow;
 
+        await _publishEndpoint.Publish(_mapper.Map<RecipeUpdated>(recipe));
         bool succesful = await _recipesDbContext.SaveChangesAsync() > 0;
 
         if (!succesful) return StatusCode(500, "Database operation failed");
@@ -93,6 +105,7 @@ public class RecipesController : ControllerBase
         // TODO: check if the recipe user id == logged in user id
 
         _recipesDbContext.Remove(recipe);
+        await _publishEndpoint.Publish(_mapper.Map<RecipeDeleted>(new RecipeDeleted { Id = recipe.Id.ToString() }));
         var succesful = await _recipesDbContext.SaveChangesAsync() > 0;
 
         if (!succesful) return StatusCode(500, "Database operation failed");

@@ -1,11 +1,9 @@
-﻿using MongoDB.Entities;
+﻿namespace Contracts;
 
-namespace RecipesSearchService.Models;
-
-public class RecipeSearchItem : Entity
+public class RecipeCreated
 {
-    // by default id becomes the id of a mongodb entry
-    public string UserId { get; set; }
+    public Guid Id { get; set; }
+    public Guid UserId { get; set; }
     public string Title { get; set; }
     public string ShortDescription { get; set; }
     public string IngredientsList { get; set; }

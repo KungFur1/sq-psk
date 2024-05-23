@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipesService", "Backend\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipesSearchService", "Backend\RecipesSearchService\RecipesSearchService.csproj", "{2114A867-6064-48D7-84A7-B280D41AF5DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Backend\Contracts\Contracts.csproj", "{0791CE0C-D066-444D-8649-DCDD1B941A85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{2114A867-6064-48D7-84A7-B280D41AF5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2114A867-6064-48D7-84A7-B280D41AF5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2114A867-6064-48D7-84A7-B280D41AF5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0791CE0C-D066-444D-8649-DCDD1B941A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0791CE0C-D066-444D-8649-DCDD1B941A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0791CE0C-D066-444D-8649-DCDD1B941A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0791CE0C-D066-444D-8649-DCDD1B941A85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A09E6CD0-EEA2-404B-8AE7-011CF52A42E0} = {39E2B09E-E8FA-4179-B8FD-4FB5848DDD3F}
 		{2114A867-6064-48D7-84A7-B280D41AF5DF} = {39E2B09E-E8FA-4179-B8FD-4FB5848DDD3F}
+		{0791CE0C-D066-444D-8649-DCDD1B941A85} = {39E2B09E-E8FA-4179-B8FD-4FB5848DDD3F}
 	EndGlobalSection
 EndGlobal
