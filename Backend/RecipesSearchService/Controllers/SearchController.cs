@@ -32,7 +32,7 @@ public class SearchController : ControllerBase
 
         query = searchParams.FilterBy switch
         {
-            "new" => query.Match(x => x.CreatedAt > DateTime.UtcNow.AddHours(-6)),
+            "new" => query.Match(x => x.CreatedAt > DateTime.UtcNow.AddMinutes(-2)),
             _ => query
         };
 
