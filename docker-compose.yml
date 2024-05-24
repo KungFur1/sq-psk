@@ -1,12 +1,12 @@
 services:
-  postgres:
+  postgres-recipes:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=postgrespw
     ports:
       - 5432:5432
     volumes:
-      - /var/lib/postgresql/data
+      - /var/lib/postgresql-recipes/data
   mongodb:
     image: mongo
     environment:
@@ -21,3 +21,11 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+  postgres-auth:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+    ports:
+      - 5433:5432
+    volumes:
+      - /var/lib/postgresql-auth/data

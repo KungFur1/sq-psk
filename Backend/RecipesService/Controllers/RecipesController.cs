@@ -57,7 +57,7 @@ public class RecipesController : ControllerBase
         // TODO: Replace UserId with the logged in user id from the JWT
         recipe.UserId = Guid.Parse("ffffffff-ffff-ffff-ffff-ffffffffffff");
 
-        _recipesDbContext.Add(recipe);
+        _recipesDbContext.Recipes.Add(recipe);
         var newRecipe = _mapper.Map<RecipeResponseDto>(recipe);
         await _publishEndpoint.Publish(_mapper.Map<RecipeCreated>(newRecipe));
         bool succesful = await _recipesDbContext.SaveChangesAsync() > 0;
@@ -104,7 +104,7 @@ public class RecipesController : ControllerBase
 
         // TODO: check if the recipe user id == logged in user id
 
-        _recipesDbContext.Remove(recipe);
+        _recipesDbContext.Recipes.Remove(recipe);
         await _publishEndpoint.Publish(_mapper.Map<RecipeDeleted>(new RecipeDeleted { Id = recipe.Id.ToString() }));
         var succesful = await _recipesDbContext.SaveChangesAsync() > 0;
 

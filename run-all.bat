@@ -11,3 +11,7 @@ REM 3. Starting RecipesSearchService
 cd /D "%~dp0"
 cd ./Backend/RecipesSearchService
 start "Recipes Search Service" cmd /K dotnet watch
+REM 4. Starting AuthService
+cd /D "%~dp0"
+cd ./Backend/AuthService
+start "Auth Service" cmd /K dotnet watch
