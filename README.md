@@ -16,6 +16,7 @@
 - **RabbitMQ** - for micro service communication.
 - **MassTransit** - message BUS client.
 - **Microsoft YARP** - for gateway fucntionality.
+- **BCrypt** - for password encription.
 - Domantai fill in the frontend technologies...
 
 ## How To Setup?

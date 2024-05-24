@@ -41,7 +41,7 @@ public static class DbInitializer
             new Recipe
             {
                 Id = Guid.Parse("4a842e83-29b9-4e2a-a8af-f71f7e7ca3eb"),
-                UserId = Guid.Parse("c3d1eb34-b848-48ca-b277-ed3bb3e242ae"),
+                UserId = Guid.Parse("f1819dad-76e3-41b3-9a76-e7fa6b974cc4"),
                 Title = "Classic Beef Stroganoff",
                 ShortDescription = "A rich and creamy dish with tender strips of beef and mushrooms.",
                 IngredientsList = "500g beef sirloin, 1 onion, 250g mushrooms, 1 cup beef broth, 1/2 cup sour cream, 2 tablespoons mustard, 300g egg noodles",
