@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RecipesService;
 using RecipesService.Data;
 using MassTransit;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,13 +28,13 @@ builder.Services.AddMassTransit(x =>
         cfg.ConfigureEndpoints(context);
     });
 });
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();
 
-
-app.UseAuthorization();
 app.MapControllers();
+app.UseMiddleware<RemoteAuthHandler>();
 try{
     DbInitializer.InitializeDb(app);
 }

@@ -18,7 +18,6 @@ var app = builder.Build();
 
 // Midleware
 app.UseAuthorization();
-app.UseHttpsRedirection();
 app.MapControllers();
 try{
     DbInitializer.InitializeDb(app);

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipesService.Data;
 using RecipesService.DTOs;
+using RecipesService.EndpointHelpers;
 using RecipesService.Models;
 
 namespace RecipesService;
@@ -51,8 +52,18 @@ public class RecipesController : ControllerBase
     }
 
     [HttpPost]
+    [Authenticate]
     public async Task<ActionResult<RecipeResponseDto>> CreateRecipe(RecipeCreateDto recipeCreateDto)
     {
+        // TEST-------------
+        var sessionInfo = HttpContext.Items["SessionInfo"] as SessionInfoDto;
+        if (sessionInfo == null)
+        {
+            System.Console.WriteLine("------->Is null");
+        }
+        System.Console.WriteLine("---------> User Id: " + sessionInfo.UserId);
+        // TEST-------------
+
         var recipe = _mapper.Map<Recipe>(recipeCreateDto);
         // TODO: Replace UserId with the logged in user id from the JWT
         recipe.UserId = Guid.Parse("ffffffff-ffff-ffff-ffff-ffffffffffff");
@@ -69,6 +80,7 @@ public class RecipesController : ControllerBase
 
     [HttpPut]
     [Route("{id}")]
+    [Authenticate]
     public async Task<ActionResult<RecipeResponseDto>> UpdateRecipe(Guid id, RecipeUpdateDto recipeUpdateDto)
     {
         var recipe = await _recipesDbContext.Recipes
@@ -95,6 +107,7 @@ public class RecipesController : ControllerBase
 
     [HttpDelete]
     [Route("{id}")]
+    [Authenticate]
     public async Task<ActionResult> DeleteRecipeById(Guid id)
     {
         var recipe = await _recipesDbContext.Recipes
