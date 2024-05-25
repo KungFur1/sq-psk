@@ -24,8 +24,8 @@
 
 ## Notes
 RabbitMq admin: http://localhost:15672/
-TODO: review & clean the code
+TODO: review & clean the code - DRY and move endpoint code into functions
 TODO: architecture diagram
 MAYBE TODO: data consistency table (docker must start first)
-TODO: Image Service use auto mapper
-TODO: Add test data to image service
+MAYBE TODO: Image Service use auto mapper
+MAYBE TODO: improve session logic/code
