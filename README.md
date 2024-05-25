@@ -31,3 +31,5 @@ TODO: add extra fields to recipe in recipes service
 TODO: review & clean the code
 TODO: architecture diagram
 MAYBE TODO: data consistency table (docker must start first)
+TODO: Image Service use auto mapper
+TODO: Add test data to image service
