@@ -19,7 +19,7 @@ public async Task Consume(ConsumeContext<RecipeUpdated> consumable)
         dbRecipeSearchItem.ShortDescription = consumable.Message.ShortDescription ?? dbRecipeSearchItem.ShortDescription;
         dbRecipeSearchItem.IngredientsList = consumable.Message.IngredientsList ?? dbRecipeSearchItem.IngredientsList;
         dbRecipeSearchItem.CookingSteps = consumable.Message.CookingSteps ?? dbRecipeSearchItem.CookingSteps;
-        dbRecipeSearchItem.ImageUrl = consumable.Message.ImageUrl ?? dbRecipeSearchItem.ImageUrl;
+        dbRecipeSearchItem.ImageId = consumable.Message.ImageId ?? dbRecipeSearchItem.ImageId;
 
         await DB.Update<RecipeSearchItem>()
             .MatchID(dbRecipeSearchItem.ID)

@@ -2,5 +2,5 @@
 
 public class RecipeDeleted
 {
-    public string Id { get; set; }
+    public Guid Id { get; set; }
 }

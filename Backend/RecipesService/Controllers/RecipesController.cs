@@ -89,7 +89,10 @@ public class RecipesController : ControllerBase
         recipe.ShortDescription = recipeUpdateDto.ShortDescription ?? recipe.ShortDescription;
         recipe.IngredientsList = recipeUpdateDto.IngredientsList ?? recipe.IngredientsList;
         recipe.CookingSteps = recipeUpdateDto.CookingSteps ?? recipe.CookingSteps;
-        recipe.ImageUrl = recipeUpdateDto.ImageUrl ?? recipe.ImageUrl;
+        recipe.ImageId = recipeUpdateDto.ImageId ?? recipe.ImageId;
+        recipe.PrepTime = recipeUpdateDto.PrepTime ?? recipe.PrepTime;
+        recipe.CookTime = recipeUpdateDto.CookTime ?? recipe.CookTime;
+        recipe.Servings = recipeUpdateDto.Servings ?? recipe.Servings;
         recipe.UpdatedAt = DateTime.UtcNow;
 
         await _publishEndpoint.Publish(_mapper.Map<RecipeUpdated>(recipe));
@@ -115,7 +118,7 @@ public class RecipesController : ControllerBase
         if (recipe.UserId != sessionInfo.UserId) return Unauthorized();
 
         _recipesDbContext.Recipes.Remove(recipe);
-        await _publishEndpoint.Publish(_mapper.Map<RecipeDeleted>(new RecipeDeleted { Id = recipe.Id.ToString() }));
+        await _publishEndpoint.Publish(_mapper.Map<RecipeDeleted>(new RecipeDeleted { Id = recipe.Id }));
         var succesful = await _recipesDbContext.SaveChangesAsync() > 0;
 
         if (!succesful) return StatusCode(500, "Database operation failed");
