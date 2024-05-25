@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RecipesService.Data;
 using RecipesService.DTOs;
+using RecipesService.EndpointHelpers;
 using RecipesService.Models;
 
 namespace RecipesService;
@@ -51,11 +52,13 @@ public class RecipesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<RecipeResponseDto>> CreateRecipe(RecipeCreateDto recipeCreateDto)
+    [Authenticate]
+    public async Task<ActionResult<RecipeResponseDto>> CreateRecipe(
+        [FromBody] RecipeCreateDto recipeCreateDto, 
+        [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
         var recipe = _mapper.Map<Recipe>(recipeCreateDto);
-        // TODO: Replace UserId with the logged in user id from the JWT
-        recipe.UserId = Guid.Parse("ffffffff-ffff-ffff-ffff-ffffffffffff");
+        recipe.UserId = sessionInfo.UserId;
 
         _recipesDbContext.Recipes.Add(recipe);
         var newRecipe = _mapper.Map<RecipeResponseDto>(recipe);
@@ -69,14 +72,18 @@ public class RecipesController : ControllerBase
 
     [HttpPut]
     [Route("{id}")]
-    public async Task<ActionResult<RecipeResponseDto>> UpdateRecipe(Guid id, RecipeUpdateDto recipeUpdateDto)
+    [Authenticate]
+    public async Task<ActionResult<RecipeResponseDto>> UpdateRecipe(
+        Guid id,
+        [FromBody] RecipeUpdateDto recipeUpdateDto,
+        [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
         var recipe = await _recipesDbContext.Recipes
             .FirstOrDefaultAsync(x => x.Id == id);
         
         if (recipe == null) return NotFound();
 
-        // TODO: check if the logged in user id matches the recipe user id
+        if (recipe.UserId != sessionInfo.UserId) return Unauthorized();
 
         recipe.Title = recipeUpdateDto.Title ?? recipe.Title;
         recipe.ShortDescription = recipeUpdateDto.ShortDescription ?? recipe.ShortDescription;
@@ -95,14 +102,17 @@ public class RecipesController : ControllerBase
 
     [HttpDelete]
     [Route("{id}")]
-    public async Task<ActionResult> DeleteRecipeById(Guid id)
+    [Authenticate]
+    public async Task<ActionResult> DeleteRecipeById(
+        Guid id,
+        [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
         var recipe = await _recipesDbContext.Recipes
             .FindAsync(id);
         
         if (recipe == null) return NotFound();
 
-        // TODO: check if the recipe user id == logged in user id
+        if (recipe.UserId != sessionInfo.UserId) return Unauthorized();
 
         _recipesDbContext.Recipes.Remove(recipe);
         await _publishEndpoint.Publish(_mapper.Map<RecipeDeleted>(new RecipeDeleted { Id = recipe.Id.ToString() }));

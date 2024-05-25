@@ -2,12 +2,17 @@ using Microsoft.EntityFrameworkCore;
 using RecipesService;
 using RecipesService.Data;
 using MassTransit;
+using Microsoft.AspNetCore.Authentication;
+using RecipesService.EndpointHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // DI components
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => 
+{
+    options.ModelBinderProviders.Insert(0, new SessionInfoModelBinderProvider());
+});
 builder.Services.AddDbContext<RecipesDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DockerPostgreSQLConnectionString"));
@@ -27,13 +32,13 @@ builder.Services.AddMassTransit(x =>
         cfg.ConfigureEndpoints(context);
     });
 });
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();
 
-
-app.UseAuthorization();
 app.MapControllers();
+app.UseMiddleware<RemoteAuthHandler>();
 try{
     DbInitializer.InitializeDb(app);
 }
