@@ -13,5 +13,11 @@ public class RecipeCreateDto
     [Required]
     public string CookingSteps { get; set; }
     [Required]
-    public string ImageUrl { get; set; }
+    public Guid ImageId { get; set; }
+    [Required]
+    public int PrepTime { get; set; }
+    [Required]
+    public int CookTime { get; set; }
+    [Required]
+    public int Servings { get; set; }
 }

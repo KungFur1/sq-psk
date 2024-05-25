@@ -24,10 +24,8 @@
 
 ## Notes
 RabbitMq admin: http://localhost:15672/
-CURRENT: image upload service
-TODO: session control + expiration
-TODO: change ImageUrl to ImageId in recipes service
-TODO: add extra fields to recipe in recipes service
-TODO: review & clean the code
+TODO: review & clean the code - DRY and move endpoint code into functions
 TODO: architecture diagram
 MAYBE TODO: data consistency table (docker must start first)
+MAYBE TODO: Image Service use auto mapper
+MAYBE TODO: improve session logic/code

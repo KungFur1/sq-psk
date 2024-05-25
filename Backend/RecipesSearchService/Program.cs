@@ -24,7 +24,7 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) => 
     {
-        cfg.ReceiveEndpoint("recipes-search-recipe-created", e =>
+        cfg.ReceiveEndpoint("recipes-search-endpoint", e =>
         {
             e.UseMessageRetry(r => r.Interval(60, 8));
 

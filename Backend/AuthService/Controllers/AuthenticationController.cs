@@ -50,6 +50,13 @@ public class AuthenticationController : ControllerBase
 
         if (!PasswordHasher.PasswordsMatch(loginDto.Password, user.HashedPassword)) return Unauthorized("Invalid login credentials");
 
+        var existing_session = await _authDbContext.Sessions
+            .FirstOrDefaultAsync(x => x.UserId == user.Id);
+        if (existing_session != null)
+        {
+            _authDbContext.Sessions.Remove(existing_session);
+            await _authDbContext.SaveChangesAsync();
+        }
         var session = SessionGenerator.CreateSession(user.Id);
         _authDbContext.Sessions.Add(session);
         bool succesful = await _authDbContext.SaveChangesAsync() > 0;
@@ -66,6 +73,13 @@ public class AuthenticationController : ControllerBase
             .FirstOrDefaultAsync(x => x.SessionKey == decodeSessionDto.SessionKey);
         
         if (session == null) return Unauthorized();
+
+        if (session.CreatedAt.AddMinutes(1) < DateTime.UtcNow)
+        {
+            _authDbContext.Sessions.Remove(session);
+            await _authDbContext.SaveChangesAsync();
+            return Unauthorized();
+        }
 
         return _mapper.Map<SessionInfoResponseDto>(session);
     }

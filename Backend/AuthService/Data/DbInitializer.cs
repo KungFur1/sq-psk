@@ -31,13 +31,19 @@ public static class DbInitializer
             new User {
                 Id = Guid.Parse("f1819dad-76e3-41b3-9a76-e7fa6b974cc4"),
                 Email = "easy-life@gmail.com",
-                HashedPassword = PasswordHasher.HashPassword("easy-life")
+                HashedPassword = PasswordHasher.HashPassword("easy-life"),
+                UserName = "Maria",
+                FirstName = "Maria",
+                LastName = "Authentica"
             },
 
             new User {
                 Id = Guid.Parse("cb8c4501-be84-4377-98a9-f40de26f1f84"),
                 Email = "pyragas@gmail.com",
-                HashedPassword = PasswordHasher.HashPassword("obuolys")
+                HashedPassword = PasswordHasher.HashPassword("obuolys"),
+                UserName = "I_LOVE_PYRAGAI",
+                FirstName = "V",
+                LastName = "V"
             }
         };
 
