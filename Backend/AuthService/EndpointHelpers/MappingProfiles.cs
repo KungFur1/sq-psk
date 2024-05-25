@@ -14,5 +14,7 @@ public class MappingProfiles : Profile
         CreateMap<Session, SessionKeyResponseDto>();
         
         CreateMap<Session, SessionInfoResponseDto>();
+
+        CreateMap<User, UserPublicResponseDto>();
     }
 }
