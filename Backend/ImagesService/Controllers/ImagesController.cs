@@ -1,4 +1,5 @@
 ﻿using ImagesService.DTOs;
+using ImagesService.EndpointHelpers;
 using ImagesService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,17 +17,19 @@ public class ImagesController : ControllerBase
         _imagesDbContext = imagesDbContext;
     }
     [HttpPost]
-    public async Task<ActionResult<ImageUploadResponseDto>> UploadImage(IFormFile file)
+    [Authenticate]
+    public async Task<ActionResult<ImageUploadResponseDto>> UploadImage(
+        IFormFile file,
+        [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
         if (file == null || file.Length == 0) return BadRequest("No image uploaded");
-        System.Console.WriteLine(Path.GetExtension(file.FileName).ToString());
         if (Path.GetExtension(file.FileName).ToString() != ".jpg") return BadRequest("Unsupported file type");
 
 
         var imageMetadata = new ImageMetaData
         {
             Id = Guid.NewGuid(),
-            UserId = Guid.NewGuid(),
+            UserId = sessionInfo.UserId,
         };
         imageMetadata.FilePath = Path.Combine("Images", imageMetadata.Id.ToString() + Path.GetExtension(file.FileName));
 
