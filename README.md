@@ -26,6 +26,7 @@
 RabbitMq admin: http://localhost:15672/
 CURRENT: image upload service
 TODO: session control + expiration
+TODO: change ImageUrl to ImageId in recipes service
 TODO: add extra fields to recipe in recipes service
 TODO: review & clean the code
 TODO: architecture diagram

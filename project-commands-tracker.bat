@@ -15,3 +15,6 @@ dotnet add reference ../../Backend/Contracts
 :: auth service setup
 dotnet new webapi -o Backend/AuthService
 dotnet sln add Backend/AuthService
+:: image service setup
+dotnet new webapi -o Backend/ImageService
+dotnet sln add Backend/ImageService
