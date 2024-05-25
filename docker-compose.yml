@@ -29,3 +29,11 @@ services:
       - 5433:5432
     volumes:
       - /var/lib/postgresql-auth/data
+  postgres-images:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgrespw
+    ports:
+      - 5434:5432
+    volumes:
+      - /var/lib/postgresql-images/data
