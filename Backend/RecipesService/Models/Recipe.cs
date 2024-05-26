@@ -14,4 +14,6 @@ public class Recipe
     public int Servings { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+    public ICollection<Review> Reviews{ get; set; } = new List<Review>();
 }

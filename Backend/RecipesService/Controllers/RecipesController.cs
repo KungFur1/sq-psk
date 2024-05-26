@@ -29,7 +29,10 @@ public class RecipesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<List<RecipeResponseDto>>> GetAllRecipes(string date)
     {
-        var query = _recipesDbContext.Recipes.OrderBy(x => x.Title).AsQueryable();
+        var query = _recipesDbContext.Recipes
+            .Include(r => r.Reviews)
+            .OrderBy(x => x.Title)
+            .AsQueryable();
 
         if (!string.IsNullOrEmpty(date))
         {
@@ -44,6 +47,7 @@ public class RecipesController : ControllerBase
     public async Task<ActionResult<RecipeResponseDto>> GetRecipeById(Guid id)
     {
         var recipe = await _recipesDbContext.Recipes
+            .Include(r => r.Reviews)
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (recipe == null) return NotFound();

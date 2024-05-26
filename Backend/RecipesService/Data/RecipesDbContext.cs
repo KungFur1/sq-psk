@@ -12,6 +12,7 @@ public class RecipesDbContext : DbContext
     }
 
     public DbSet<Recipe> Recipes { get; set; }
+    public DbSet<Review> Reviews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
