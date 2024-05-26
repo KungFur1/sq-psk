@@ -15,5 +15,8 @@ public class MappingProfiles : Profile
 
         CreateMap<RecipeResponseDto, RecipeCreated>();
         CreateMap<Recipe, RecipeUpdated>();
+
+        CreateMap<ReviewCreateDto, Review>();
+        CreateMap<Review, ReviewResponseDto>();
     }
 }
