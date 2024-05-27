@@ -1,0 +1,27 @@
+.register-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: lighter !important;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
+    line-height: 2em;
+}

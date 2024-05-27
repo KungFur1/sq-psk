@@ -1,0 +1,22 @@
+header {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
