@@ -1,0 +1,131 @@
+div.App {
+    background-color: #fff !important;
+}
+
+.recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recipe-header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.rating span {
+    font-size: 1.5em;
+    color: #FFD700; /* Gold color for stars */
+}
+
+.recipe-info {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-block {
+    flex: 1;
+    text-align: center;
+}
+
+.info-block span:first-child {
+    display: block;
+    font-weight: bold;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.write-review {
+    margin-top: 20px;
+}
+
+.write-review h3 {
+    margin-bottom: 10px;
+}
+
+.write-review form {
+    display: flex;
+    flex-direction: column;
+}
+
+.write-review label {
+    margin-bottom: 10px;
+}
+
+.write-review input[type="number"], .write-review textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.write-review button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recipe-detail img {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    aspect-ratio: 720 / 365;
+    object-fit: cover;
+    border-radius: 16px;
+    min-width: 100%;
+}
+
+
+@media (prefers-color-scheme: light) {
+    .review {
+        border-color: #ccc;
+        background-color: #f9f9f9;
+    }
+
+    .write-review input[type="number"], .write-review textarea {
+        border-color: #ccc;
+    }
+
+    .write-review button {
+        background-color: #333;
+        color: white;
+    }
+
+    .write-review button:hover {
+        background-color: #555;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .review {
+        border-color: #ccc;
+        background-color: #000;
+    }
+
+    .write-review input[type="number"], .write-review textarea {
+        border-color: #ccc;
+    }
+
+    .write-review button {
+        background-color: #ccc;
+        color: black;
+    }
+
+    .write-review button:hover {
+        background-color: #555;
+    }
+}
+

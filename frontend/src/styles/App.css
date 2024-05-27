@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 8px;
+}
+
+form input, form textarea {
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f8f8f8;
+    color: #333;
+  }
+
+  form input, form textarea {
+    border-color: #ccc;
+  }
+
+  form input, form textarea {
+    border-color: #ccc;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #f8f8f8;
+    background-color: #333;
+  }
+
+  form input, form textarea {
+    border-color: #ccc;
+  }
+
+  form input, form textarea {
+    border-color: #ccc;
+  }
+}
+
+
