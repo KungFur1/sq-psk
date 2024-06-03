@@ -19,13 +19,20 @@
 - **BCrypt** - for password encription.
 - Domantai fill in the frontend technologies...
 
+## Architecture Diagram
+In the diagram below each element is a program that runs independetly of other elements (and could be depolyed separetly):
+![Architecture Diagram](arch-diagram.png)
+
+
 ## How To Setup?
 ...
 
 ## Notes
 RabbitMq admin: http://localhost:15672/
+
+TODO: fix notes
+
 TODO: review & clean the code - DRY and move endpoint code into functions
-TODO: architecture diagram
 MAYBE TODO: data consistency table (docker must start first)
 MAYBE TODO: Image Service use auto mapper
 MAYBE TODO: improve session logic/code

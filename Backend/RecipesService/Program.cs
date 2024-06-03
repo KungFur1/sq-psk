@@ -4,6 +4,8 @@ using RecipesService.Data;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication;
 using RecipesService.EndpointHelpers;
+using MassTransit.Logging;
+using RecipesService.LoggingServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +35,14 @@ builder.Services.AddMassTransit(x =>
     });
 });
 builder.Services.AddHttpClient();
-
+if((bool)builder.Configuration.GetValue(typeof(bool), "LogToFile"))
+{
+    builder.Services.AddSingleton<IRequestLogger, FileRequestLogger>(provider => new FileRequestLogger("logs.txt"));
+}
+else
+{
+    builder.Services.AddSingleton<IRequestLogger, ConsoleRequestLogger>();
+}
 
 var app = builder.Build();
 
