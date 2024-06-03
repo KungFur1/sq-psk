@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using RecipesService.Data;
 using RecipesService.DTOs;
 using RecipesService.EndpointHelpers;
+using RecipesService.LoggingServices;
 using RecipesService.Models;
 
 namespace RecipesService;
@@ -18,12 +19,14 @@ public class RecipesController : ControllerBase
     private readonly RecipesDbContext _recipesDbContext;
     private readonly IMapper _mapper;
     private readonly IPublishEndpoint _publishEndpoint;
+    private readonly IRequestLogger _requestLogger;
 
-    public RecipesController(RecipesDbContext recipesDbContext, IMapper mapper, IPublishEndpoint publishEndpoint)
+    public RecipesController(RecipesDbContext recipesDbContext, IMapper mapper, IPublishEndpoint publishEndpoint, IRequestLogger requestLogger)
     {
         _recipesDbContext = recipesDbContext;
         _mapper = mapper;
         _publishEndpoint = publishEndpoint;
+        _requestLogger = requestLogger;
     }
 
     [HttpGet]
@@ -61,6 +64,9 @@ public class RecipesController : ControllerBase
         [FromBody] RecipeCreateDto recipeCreateDto, 
         [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
+        // Logging demonstration
+        _requestLogger.LogRequest("Attempting to create: " + recipeCreateDto.Title);
+
         var recipe = _mapper.Map<Recipe>(recipeCreateDto);
         recipe.UserId = sessionInfo.UserId;
 
