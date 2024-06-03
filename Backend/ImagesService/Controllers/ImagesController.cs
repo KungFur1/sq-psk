@@ -23,7 +23,8 @@ public class ImagesController : ControllerBase
         [ModelBinder(BinderType = typeof(SessionInfoModelBinder))] SessionInfoDto sessionInfo)
     {
         if (file == null || file.Length == 0) return BadRequest("No image uploaded");
-        if (Path.GetExtension(file.FileName).ToString() != ".jpg") return BadRequest("Unsupported file type");
+        if (Path.GetExtension(file.FileName).ToString() != ".jpg" && 
+            Path.GetExtension(file.FileName).ToString() != ".png") return BadRequest("Unsupported file type");
 
 
         var imageMetadata = new ImageMetaData

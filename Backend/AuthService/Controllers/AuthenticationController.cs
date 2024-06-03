@@ -74,7 +74,7 @@ public class AuthenticationController : ControllerBase
         
         if (session == null) return Unauthorized();
 
-        if (session.CreatedAt.AddMinutes(1) < DateTime.UtcNow)
+        if (session.CreatedAt.AddMinutes(20) < DateTime.UtcNow)
         {
             _authDbContext.Sessions.Remove(session);
             await _authDbContext.SaveChangesAsync();

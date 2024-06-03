@@ -24,8 +24,13 @@
 
 ## Notes
 RabbitMq admin: http://localhost:15672/
+
+TODO: add logging DI - console/file
+TODO: add logging strategy change mid runtime
+
+TODO: fix notes + include architecture diagram
+
 TODO: review & clean the code - DRY and move endpoint code into functions
-TODO: architecture diagram
 MAYBE TODO: data consistency table (docker must start first)
 MAYBE TODO: Image Service use auto mapper
 MAYBE TODO: improve session logic/code
