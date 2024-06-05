@@ -7,7 +7,7 @@
   - [ ] log-in/registration
   - [ ] recipe creation
 - [ ] Search button
-- [ ] Search results
+- [X] My recipes results
 - [ ] Test data
 
 ## DEMO

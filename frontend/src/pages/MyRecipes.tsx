@@ -60,7 +60,7 @@ const MyRecipes: React.FC = () => {
             <main className='home-container'>
                 <h2>My recipes</h2>
                 <div className="recipe-list">
-                    {recipes.filter(r => r.userId = getUserId).map((recipe) => {
+                    {recipes.filter(r => r.userId == getUserId).map((recipe) => {
 
                         console.error(getUserId)
                         console.error(recipe.userId)

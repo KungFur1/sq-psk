@@ -59,7 +59,7 @@ const Login: React.FC = () => {
                 <h2>Log in</h2>
                 <form className="register-form" onSubmit={handleSubmit}>
                     <label>
-                        Username
+                        Email
                         <input
                             type="text"
                             name="email"
