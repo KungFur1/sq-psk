@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Header from '../components/Header';
 import InfoChip from '../components/InfoChip';
-import '../styles/CreateRecipe.css';
 import defaultServerConfig from "../common/server-info.ts";
 import Recipe from "../types/Recipe.ts";
+import '../styles/CreateRecipe.css';
+import '../styles/TextArea.css';
 
 const CreateRecipe: React.FC = () => {
     const {apiUrl} = defaultServerConfig;
@@ -19,6 +20,15 @@ const CreateRecipe: React.FC = () => {
     const [ingredient, setIngredient] = useState('');
     const [direction, setDirection] = useState('');
     const [image, setImage] = useState<File | null>(null);
+
+    const textareaRef: React.MutableRefObject<HTMLTextAreaElement | null> = useRef(null);
+
+    useEffect(() => {
+        if (textareaRef.current) {
+            textareaRef.current.style.height = 'auto';
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+        }
+    }, [description]);
 
     const handleAddIngredient = () => {
         if (ingredient) {
@@ -116,10 +126,11 @@ const CreateRecipe: React.FC = () => {
                     </label>
                     <label>
                         <textarea
+                            ref={textareaRef}
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="Add recipe description..."
-                            className="large-input"
+                            className="large-input growable"
                         ></textarea>
                     </label>
                     <div className="image-upload">

@@ -3,6 +3,7 @@
 ## TODO
 
 - [ ] Redirect to my recipes after successful creation
+- [X] Grow textarea
 - [ ] Show errors after unsuccessful:
   - [ ] log-in/registration
   - [ ] recipe creation

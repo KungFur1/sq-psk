@@ -193,12 +193,13 @@ form {
     margin-bottom: 20px;
 }
 
-/*.ingredient-inputs input,*/
-/*.direction-inputs textarea {*/
-/*    flex: 2;*/
-/*    padding: 10px;*/
-/*    font-size: 1em;*/
-/*}*/
+.ingredient-inputs input,
+.direction-inputs textarea {
+    flex: 2;
+    padding: 10px;
+    font-size: 1em;
+}
+
 .uploaded-image {
     width: 100%;
     height: auto;
@@ -238,11 +239,11 @@ form {
 }
 
 .ingredient-inputs input,
-.direction-inputs textarea {
-    flex: 2;
-    padding: 10px;
-    font-size: 1em;
-}
+/*.direction-inputs textarea {*/
+/*    flex: 2;*/
+/*    padding: 10px;*/
+/*    font-size: 1em;*/
+/*}*/
 
 ul,
 ol {
@@ -254,4 +255,3 @@ ol li {
     margin-bottom: 10px;
     font-size: 1.2em;
 }
-
