@@ -24,7 +24,7 @@ main.home-container {
 }
 
 .welcome-image {
-    flex: 1;
+    /*flex: 1;*/
     width: 300px;
     height: auto;
     margin-left: 20px;
