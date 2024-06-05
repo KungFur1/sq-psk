@@ -20,3 +20,15 @@ header nav a {
 header nav a:hover {
     text-decoration: underline;
 }
+
+@media (prefers-color-scheme: light) {
+    header {
+        background-color: #ffffff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    header {
+        background-color: #000;
+    }
+}

@@ -3,9 +3,7 @@
     text-align: left;
 
     padding: 0.8em 0.9em 1em;
-    border: 1px solid #D8DADC;
     border-radius: 12px;
-    background-color: #fff;
 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
     font-size: 1em;
@@ -23,5 +21,21 @@
 
 .info-chip span:last-child {
     font-weight: 200;
+}
+
+@media (prefers-color-scheme: light) {
+    .info-chip {
+        border: 1px solid #D8DADC;
+        background-color: #fff;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .info-chip {
+        border: 1px solid #aaa;
+        background-color: #000;
+    }
+
 }
 

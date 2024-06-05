@@ -44,7 +44,7 @@ main.home-container {
 
 @media (prefers-color-scheme: dark) {
     .welcome-section {
-        background-color: #000;
+        background-color: #202020;
     }
 }
 
