@@ -17,7 +17,11 @@ const Home: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const navigate = useNavigate();
-    const handleSearchClick = () => { navigate(`/search?q=${searchQuery}`) }
+
+    const handleSearchClick = () => {
+        localStorage.setItem('searchTerm', searchQuery);
+        navigate(`/search?q=${searchQuery}`)
+    }
 
     useEffect(() => {
         axios.get(`${apiUrl}/api/recipes`)

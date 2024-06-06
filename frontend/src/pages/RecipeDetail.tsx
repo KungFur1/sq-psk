@@ -41,9 +41,9 @@ const RecipeDetail: React.FC = () => {
             <main className="recipe-detail">
                 <div className="recipe-header">
                     <h1>{recipe?.title}</h1>
-                    <div className="rating">
-                        <span>⭐⭐⭐⭐⭐</span>
-                    </div>
+                    {/*<div className="rating">*/}
+                    {/*    <span>⭐⭐⭐⭐⭐</span>*/}
+                    {/*</div>*/}
                 </div>
                 <p>{recipe?.shortDescription}</p>
                 <Image
@@ -69,29 +69,29 @@ const RecipeDetail: React.FC = () => {
                         <li key={index}>{step}</li>
                     ))}
                 </ol>
-                <h3>Reviews:</h3>
-                <strong>TODO</strong>
-                {/*{recipe?.reviews.map((review, index) => (*/}
-                {/*    <div className="review" key={index}>*/}
-                {/*        <p><strong>{review.user}</strong></p>*/}
-                {/*        <p>{'⭐'.repeat(review.rating)}</p>*/}
-                {/*        <p>{review.comment}</p>*/}
-                {/*    </div>*/}
-                {/*))}*/}
-                <div className="write-review">
-                    <h3>Write your own review:</h3>
-                    <strong>TODO</strong>
-                    {/*<form>*/}
-                    {/*    <label>*/}
-                    {/*        <span>Rating:</span>*/}
-                    {/*        <input type="number" min="0" max="5" />*/}
-                    {/*    </label>*/}
-                    {/*    <label>*/}
-                    {/*        <textarea placeholder="Leave your feedback"></textarea>*/}
-                    {/*    </label>*/}
-                    {/*    <button type="submit">Publish</button>*/}
-                    {/*</form>*/}
-                </div>
+                {/*<h3>Reviews:</h3>*/}
+                {/*<strong>TODO</strong>*/}
+                {/*/!*{recipe?.reviews.map((review, index) => (*!/*/}
+                {/*/!*    <div className="review" key={index}>*!/*/}
+                {/*/!*        <p><strong>{review.user}</strong></p>*!/*/}
+                {/*/!*        <p>{'⭐'.repeat(review.rating)}</p>*!/*/}
+                {/*/!*        <p>{review.comment}</p>*!/*/}
+                {/*/!*    </div>*!/*/}
+                {/*/!*))}*!/*/}
+                {/*<div className="write-review">*/}
+                {/*    <h3>Write your own review:</h3>*/}
+                {/*    <strong>TODO</strong>*/}
+                {/*    /!*<form>*!/*/}
+                {/*    /!*    <label>*!/*/}
+                {/*    /!*        <span>Rating:</span>*!/*/}
+                {/*    /!*        <input type="number" min="0" max="5" />*!/*/}
+                {/*    /!*    </label>*!/*/}
+                {/*    /!*    <label>*!/*/}
+                {/*    /!*        <textarea placeholder="Leave your feedback"></textarea>*!/*/}
+                {/*    /!*    </label>*!/*/}
+                {/*    /!*    <button type="submit">Publish</button>*!/*/}
+                {/*    /!*</form>*!/*/}
+                {/*</div>*/}
             </main>
         </div>
     );

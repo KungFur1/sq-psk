@@ -32,9 +32,10 @@ main {
 
 @media (prefers-color-scheme: light) {
     :root {
-        color: rgba(255, 255, 255, 0.87);
-        background-color: #F8F8F8;
+        color: #213547;
+        background-color: #fff;
     }
+
     a:hover {
         color: #747bff;
     }

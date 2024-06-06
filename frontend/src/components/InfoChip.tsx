@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/InfoChip.css';
 
 interface InfoChipProps {
@@ -12,6 +12,7 @@ interface InfoChipProps {
 const InfoChip: React.FC<InfoChipProps> = ({ title, value, postfix, editable = false, onChange }) => {
     const [editing, setEditing] = useState(false);
     const [inputValue, setInputValue] = useState(value);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         setInputValue(value);
@@ -19,6 +20,11 @@ const InfoChip: React.FC<InfoChipProps> = ({ title, value, postfix, editable = f
 
     const handleEditClick = () => {
         setEditing(true);
+        setTimeout(() => {
+            if (inputRef.current) {
+                inputRef.current.select();
+            }
+        }, 0);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,11 +39,12 @@ const InfoChip: React.FC<InfoChipProps> = ({ title, value, postfix, editable = f
     };
 
     return (
-        <div className="info-chip">
+        <div className="info-chip" onClick={editable ? handleEditClick : undefined}>
             <span className="info-chip-title">{title}</span>
             {editable && editing ? (
                 <input
                     type="text"
+                    ref={inputRef}
                     value={inputValue}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -45,7 +52,7 @@ const InfoChip: React.FC<InfoChipProps> = ({ title, value, postfix, editable = f
                     className="info-chip-input"
                 />
             ) : (
-                <span className="info-chip-value" onClick={editable ? handleEditClick : undefined}>
+                <span className="info-chip-value">
                     {inputValue} {postfix}
                 </span>
             )}

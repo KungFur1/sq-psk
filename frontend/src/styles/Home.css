@@ -24,9 +24,9 @@ main.home-container {
 }
 
 .welcome-image {
-    flex: 1;
-    width: 300px;
-    height: auto;
+    /*flex: 1;*/
+    width: 400px;
+    height: 100%;
     margin-left: 20px;
 }
 
@@ -44,7 +44,7 @@ main.home-container {
 
 @media (prefers-color-scheme: dark) {
     .welcome-section {
-        background-color: #000;
+        background-color: #202020;
     }
 }
 

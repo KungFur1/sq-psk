@@ -1,5 +1,6 @@
 deps:
     pnpm install -g npm@latest
+    pnpm install
 
 run:
     pnpm run dev

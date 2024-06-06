@@ -1,5 +1,25 @@
 # Slay Queen Frontend (sqf)
 
+## TODO
+
+- [X] Redirect to my recipes after successful creation
+- [X] Grow textarea
+- [+-] Align create recipe with wireframe
+- [X] Fix inputs in InfoChips
+- [ ] Show errors after unsuccessful:
+  - [ ] log-in/registration
+  - [ ] recipe creation
+- [X] Search button
+- [X] My recipes results
+- [ ] Prepare test data for demo
+
+## DEMO
+
+* All recipes + search
+* RecipeDetails
+* Registration / log-in
+* Recipe creation
+
 ## Prerequisites
 
 > [!IMPORTANT]
@@ -8,10 +28,6 @@
 > or missing some dependencies.
 
 You'll need to install: `pnpm`, maybe/probably `npm` & `node` (for MacOS: `brew install npm node pnpm`).
-
-## TODO
-
-- [ ] Make forms in Registration and Log In a common component.
 
 ## React + TypeScript + Vite
 

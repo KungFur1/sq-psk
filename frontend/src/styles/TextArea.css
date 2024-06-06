@@ -1,0 +1,4 @@
+textarea.growable {
+    resize: none;
+    overflow: hidden;
+}

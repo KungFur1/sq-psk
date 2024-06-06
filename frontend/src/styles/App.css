@@ -35,7 +35,6 @@ form input, form textarea {
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: #f8f8f8;
     color: #333;
   }
 
@@ -51,7 +50,7 @@ form input, form textarea {
 @media (prefers-color-scheme: dark) {
   body {
     color: #f8f8f8;
-    background-color: #333;
+    background-color: #000;
   }
 
   form input, form textarea {

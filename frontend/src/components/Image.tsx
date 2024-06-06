@@ -8,12 +8,12 @@ const Image = ({ src, placeholder, alt, ...props }) => {
     };
 
     return (
-        <img
-            src={imgSrc}
-            alt={alt}
-            onError={handleError}
-            {...props}
-        />
+            <img
+                src={imgSrc}
+                alt={alt}
+                onError={handleError}
+                {...props}
+            />
     );
 };
 

@@ -3,9 +3,7 @@
     text-align: left;
 
     padding: 0.8em 0.9em 1em;
-    border: 1px solid #D8DADC;
     border-radius: 12px;
-    background-color: #fff;
 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
     font-size: 1em;
@@ -13,6 +11,7 @@
 
     /*line-height: 1;*/
     /*font-weight: inherit;*/
+    height: 5.5em;
 }
 
 .info-chip span:first-child {
@@ -23,5 +22,31 @@
 
 .info-chip span:last-child {
     font-weight: 200;
+}
+
+.info-chip input {
+    font-weight: 200;
+    padding: 0;
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+}
+
+
+@media (prefers-color-scheme: light) {
+    .info-chip {
+        border: 1px solid #D8DADC;
+        background-color: #fff;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .info-chip {
+        border: 1px solid #aaa;
+        background-color: #000;
+    }
+
 }
 
