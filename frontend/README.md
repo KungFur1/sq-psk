@@ -4,18 +4,18 @@
 
 - [X] Redirect to my recipes after successful creation
 - [X] Grow textarea
-- [ ] Align create recipe with wireframe
+- [+-] Align create recipe with wireframe
 - [ ] Fix inputs in InfoChips
 - [ ] Show errors after unsuccessful:
   - [ ] log-in/registration
   - [ ] recipe creation
 - [X] Search button
 - [X] My recipes results
-- [ ] Test data
+- [ ] Prepare test data for demo
 
 ## DEMO
 
-* All recipies + search
+* All recipes + search
 * RecipeDetails
 * Registration / log-in
 * Recipe creation

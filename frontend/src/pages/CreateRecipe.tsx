@@ -20,9 +20,9 @@ const CreateRecipe: React.FC = () => {
     const [cookTime, setCookTime] = useState('');
     const [servings, setServings] = useState('-');
     const [ingredients, setIngredients] = useState<string[]>([]);
-    const [directions, setDirections] = useState<string[]>([]);
+    const [steps, setSteps] = useState<string[]>([]);
     const [ingredient, setIngredient] = useState('');
-    const [direction, setDirection] = useState('');
+    const [step, setStep] = useState('');
     const [image, setImage] = useState<File | null>(null);
 
     const addFakeData = () => {
@@ -30,7 +30,7 @@ const CreateRecipe: React.FC = () => {
         setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id cursus metus aliquam eleifend mi. ');
 
         setIngredients([...ingredients, 'test ingredient']);
-        setDirections([...directions, 'test step']);
+        setSteps([...steps, 'test step']);
 
         setCookTime('1');
         setPrepTime('2');
@@ -53,10 +53,10 @@ const CreateRecipe: React.FC = () => {
         }
     };
 
-    const handleAddDirection = () => {
-        if (direction) {
-            setDirections([...directions, direction]);
-            setDirection('');
+    const handleAddStep = () => {
+        if (step) {
+            setSteps([...steps, step]);
+            setStep('');
         }
     };
 
@@ -96,7 +96,7 @@ const CreateRecipe: React.FC = () => {
             title: recipeName,
             shortDescription: description,
             ingredientsList: ingredients.join(', '),
-            cookingSteps: directions.join(', '),
+            cookingSteps: steps.join(', '),
             prepTime: parseInt(prepTime),
             cookTime: parseInt(cookTime),
             imageId: imageId, // Include the uploaded image URL
@@ -207,50 +207,63 @@ const CreateRecipe: React.FC = () => {
                             }}
                         />
                     </div>
-                    <h3>Ingredients:</h3>
-                    <div className="ingredient-inputs">
-                        <label>
-                            List ingredient measurement:
-                            <input
-                                type="text"
-                                value={ingredient}
-                                onChange={(e) => setIngredient(e.target.value)}
-                                placeholder="Measurement"
-                            />
-                        </label>
-                        <button type="button" onClick={handleAddIngredient}>
-                            Add ingredient
-                        </button>
+
+                    <div className="step-ingredient-container">
+                        <div className='ingredients-container'>
+                            <h3>Ingredients:</h3>
+                            <div className="ingredient-inputs">
+                                <label>
+                                    List ingredients:
+                                    <input
+                                        type="text"
+                                        value={ingredient}
+                                        onChange={(e) => setIngredient(e.target.value)}
+                                        placeholder="An ingredient"
+                                    />
+                                </label>
+                                <button type="button" onClick={handleAddIngredient}>
+                                    +
+                                </button>
+                            </div>
+                            <ul>
+                                {ingredients.map((ing, index) => (
+                                    <li key={index}>{ing}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className='steps-container'>
+                            <h3>Directions:</h3>
+                            <div className="ingredient-inputs">
+                                <label>
+                                    Add a step to the recipe...
+                                    <input
+                                        type="text"
+                                        value={step}
+                                        onChange={(e) => setStep(e.target.value)}
+                                        placeholder="A Step"
+                                    />
+                                </label>
+                                <button type="button" onClick={handleAddStep}>
+                                    +
+                                </button>
+                            </div>
+                            <ol>
+                                {steps.map((dir, index) => (
+                                    <li key={index}>{dir}</li>
+                                ))}
+                            </ol>
+                        </div>
                     </div>
-                    <ul>
-                        {ingredients.map((ing, index) => (
-                            <li key={index}>{ing}</li>
-                        ))}
-                    </ul>
-                    <h3>Directions:</h3>
-                    <div className="direction-inputs">
-                        <textarea
-                            value={direction}
-                            onChange={(e) => setDirection(e.target.value)}
-                            placeholder="Add the directions of the recipe..."
-                        ></textarea>
-                        <button type="button" onClick={handleAddDirection}>
-                            Add direction
-                        </button>
-                    </div>
-                    <ol>
-                        {directions.map((dir, index) => (
-                            <li key={index}>{dir}</li>
-                        ))}
-                    </ol>
+
                     <button type="submit" className="publish-button">
                         Publish
                     </button>
                 </form>
-                    <button type='button' onClick={addFakeData}> Add fake data </button>
+                <button type='button' onClick={addFakeData}> Add fake data</button>
             </main>
         </div>
-);
+    );
 };
 
 export default CreateRecipe;

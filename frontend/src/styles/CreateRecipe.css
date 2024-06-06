@@ -81,20 +81,12 @@ div.placeholder-image {
 }
 
 .ingredient-inputs,
-.direction-inputs {
-    display: flex !important;
-    align-items: center !important;
-    margin-bottom: 20px !important;
-}
-
-.ingredient-inputs label,
-.direction-inputs label {
+.ingredient-inputs label {
     flex: 1 !important;
     margin-right: 10px !important;
 }
 
-.ingredient-inputs input,
-.direction-inputs textarea {
+.ingredient-inputs input {
     flex: 2 !important;
     padding: 10px !important;
     font-size: 1em !important;
@@ -107,10 +99,9 @@ div.placeholder-image {
     align-self: center !important;
     padding: 10px 20px !important;
     font-size: 1.2em !important;
-    background-color: #000 !important;
-    color: #fff !important;
     border: none !important;
     cursor: pointer !important;
+    width: 100%;
 }
 
 ul,
@@ -186,15 +177,13 @@ form {
     margin-bottom: 10px;
 }
 
-.ingredient-inputs,
-.direction-inputs {
+.ingredient-inputs {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.ingredient-inputs input,
-.direction-inputs textarea {
+.ingredient-inputs input {
     flex: 2;
     padding: 10px;
     font-size: 1em;
@@ -225,25 +214,16 @@ form {
     border-radius: 8px;
 }
 
-.ingredient-inputs,
-.direction-inputs {
+.ingredient-inputs {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.ingredient-inputs label,
-.direction-inputs label {
+.ingredient-inputs label {
     flex: 1;
     margin-right: 10px;
 }
-
-.ingredient-inputs input,
-/*.direction-inputs textarea {*/
-/*    flex: 2;*/
-/*    padding: 10px;*/
-/*    font-size: 1em;*/
-/*}*/
 
 ul,
 ol {
@@ -255,3 +235,12 @@ ol li {
     margin-bottom: 10px;
     font-size: 1.2em;
 }
+
+/*.step-ingredient-container {*/
+/*    display: flex;*/
+/*    gap: 3em;*/
+/*}*/
+
+/*.ingredients-container, .steps-container {*/
+/*    flex: 0.47;*/
+/*}*/
