@@ -6,7 +6,6 @@ import Recipe from "../types/Recipe.ts";
 import '../styles/CreateRecipe.css';
 import '../styles/TextArea.css';
 import {useNavigate} from "react-router-dom";
-import Button from "../components/Button.tsx";
 
 const CreateRecipe: React.FC = () => {
     const {apiUrl} = defaultServerConfig;
@@ -16,8 +15,8 @@ const CreateRecipe: React.FC = () => {
 
     const [recipeName, setRecipeName] = useState('');
     const [description, setDescription] = useState('');
-    const [prepTime, setPrepTime] = useState('');
-    const [cookTime, setCookTime] = useState('');
+    const [prepTime, setPrepTime] = useState('X');
+    const [cookTime, setCookTime] = useState('X');
     const [servings, setServings] = useState('-');
     const [ingredients, setIngredients] = useState<string[]>([]);
     const [steps, setSteps] = useState<string[]>([]);

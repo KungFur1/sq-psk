@@ -21,11 +21,6 @@
     margin-bottom: 20px;
 }
 
-.info-block {
-    flex: 1;
-    text-align: center;
-}
-
 .info-block span:first-child {
     display: block;
     font-weight: bold;

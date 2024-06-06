@@ -5,7 +5,7 @@
 - [X] Redirect to my recipes after successful creation
 - [X] Grow textarea
 - [+-] Align create recipe with wireframe
-- [ ] Fix inputs in InfoChips
+- [X] Fix inputs in InfoChips
 - [ ] Show errors after unsuccessful:
   - [ ] log-in/registration
   - [ ] recipe creation

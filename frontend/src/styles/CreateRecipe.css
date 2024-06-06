@@ -33,12 +33,6 @@ input::placeholder {
     font-weight: bold;
 }
 
-@media (prefers-color-scheme: light) {
-    input::placeholder, textarea {
-        color: #262626;
-    }
-}
-
 .image-upload {
     display: flex !important;
     flex-direction: column !important;
@@ -59,25 +53,6 @@ div.placeholder-image {
 .image-input {
     font-weight: bold;
     font-size: 1em !important;
-}
-
-/*.recipe-info {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    flex-wrap: wrap;*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-.info-block {
-    flex: 1 1 48% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    margin-bottom: 20px !important;
-}
-
-.info-block label {
-    font-size: 1.2em !important;
-    margin-bottom: 10px !important;
 }
 
 .ingredient-inputs,
@@ -106,13 +81,13 @@ div.placeholder-image {
 
 ul,
 ol {
-    margin-bottom: 20px !important;
+    margin-bottom: 35px;
 }
 
 ul li,
 ol li {
-    margin-bottom: 10px !important;
-    font-size: 1.2em !important;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
 button {
@@ -146,13 +121,10 @@ form {
 .placeholder-image {
     width: 100%;
     height: 200px;
-    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
-    color: #999;
-    border: 2px dashed #ccc;
     border-radius: 16px;
 }
 
@@ -172,37 +144,15 @@ form {
     cursor: pointer;
 }
 
-.info-block label {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
 .ingredient-inputs {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .ingredient-inputs input {
     flex: 2;
     padding: 10px;
     font-size: 1em;
-}
-
-.uploaded-image {
-    width: 100%;
-    height: auto;
-}
-
-.image-input {
-    font-size: 1em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
 }
 
 .info-chip-input {
@@ -217,30 +167,20 @@ form {
 .ingredient-inputs {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 }
 
-.ingredient-inputs label {
-    flex: 1;
-    margin-right: 10px;
+@media (prefers-color-scheme: light) {
+    .placeholder-image {
+        background-color: #f0f0f0;
+        color: #999;
+        border: 2px dashed #ccc;
+    }
 }
 
-ul,
-ol {
-    margin-bottom: 20px;
+@media (prefers-color-scheme: dark) {
+    .placeholder-image {
+        background-color: #111;
+        color: #ccc;
+        border: 2px dashed #777;
+    }
 }
-
-ul li,
-ol li {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-/*.step-ingredient-container {*/
-/*    display: flex;*/
-/*    gap: 3em;*/
-/*}*/
-
-/*.ingredients-container, .steps-container {*/
-/*    flex: 0.47;*/
-/*}*/
