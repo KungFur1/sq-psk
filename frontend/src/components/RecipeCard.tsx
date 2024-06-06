@@ -29,6 +29,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ id, title, duration, imageId, r
     // const img = <img src={imageId ? `${apiUrl}/api/images/${imageId}` : placeholder} alt={title}/>;
     // console.log(img)
 
+    console.debug(`img_id: ${imageId}`);
+
     return (
         <div className="recipe-card">
             <Link to={`/recipe/${id}`}>

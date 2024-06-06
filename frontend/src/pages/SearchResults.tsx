@@ -29,6 +29,14 @@ const SearchResult: React.FC = () => {
 
             let data = (await response.json()).results;
 
+            // console.error(data);
+            // alert(JSON.stringify(data));
+
+            // const imageId =(await (await fetch(
+            //     `${apiUrl}/api/recipe/${data.id}`,
+            // )).json()).imageId;
+            // data.imageId = imageId;
+
             setRecipes(data);
             setLoading(false);
         } catch (error) {
@@ -76,16 +84,17 @@ const SearchResult: React.FC = () => {
                         <p> No results </p>
                     : (
                             <div className="recipe-list">
-                                {recipes.map((recipe) => (
+                                {recipes.map((recipe) => {
+                                    return (
                                     <RecipeCard
                                         key={recipe.id}
                                         id={recipe.id}
                                         title={recipe.title}
                                         duration={`X min.`}
                                         rating={4}
-                                        imageUrl={recipe.imageId}
+                                        imageId={recipe.imageId}
                                     />
-                                ))}
+                                )})}
                             </div>
                     )))
                 }
