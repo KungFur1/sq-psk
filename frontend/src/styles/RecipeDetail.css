@@ -69,13 +69,13 @@ ul, ol {
     cursor: pointer;
 }
 
-.recipe-detail img {
+.img-holder img {
     margin-top: 1em;
     margin-bottom: 0.5em;
     aspect-ratio: 720 / 365;
     object-fit: cover;
     border-radius: 16px;
-    min-width: 100%;
+    max-width: 800px;
 }
 
 @media (prefers-color-scheme: light) {
