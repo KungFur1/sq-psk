@@ -25,14 +25,28 @@ const CreateRecipe: React.FC = () => {
     const [image, setImage] = useState<File | null>(null);
 
     const addFakeData = () => {
-        setRecipeName('lorem ipsum');
-        setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id cursus metus aliquam eleifend mi. ');
+        setRecipeName('Vegan Pancakes');
+        setDescription('The BEST and fluffiest vegan pancakes made with just 6 easy pantry staples you probably have on hand right now! Made in 1 bowl, the recipe can easily doubled, tripled or even quadrupled.');
 
-        setIngredients([...ingredients, 'test ingredient']);
-        setSteps([...steps, 'test step']);
+        setIngredients([
+            'Flour – I used regular all purpose flour here for the fluffiest texture，but feel free to substitute whole wheat pastry flour，spelt flour or a gluten free flour mix.',
+            'Baking powder – What makes the pancakes so fluffy!',
+            'Salt',
+            'Sugar – Just a few tablespoons，but you could substitute pure maple syrup，agave or coconut sugar if desired.',
+            'Soy milk – Any other non-dairy milk will work here，such as almond，coconut，hemp or oat milk.',
+            'Water',
+            'Oil – Only 2 tablespoons. You can use canola oil，melted coconut oil or melted vegan butter. Avocado oil or even olive oil would work as well. If you don’t use oil，simply omit and add more non-dairy milk.'
+        ]);
 
-        setCookTime('1');
-        setPrepTime('2');
+        setSteps([
+            'First， whisk together the dry ingredients in a large bowl – flour， baking powder， salt and sugar.',
+            'Pour in the non-dairy milk， water and oil.',
+            'Stir with a large spoon until just combined. A few lumps are okay; mix them too much and the pancakes will be dense.',
+            'Heat a large griddle or pan over medium-high heat. Grease the pan with a little vegan butter or coconut oil and drop about 1/3 cup pancake batter onto the pan. Cook until bubbles form， flip and cook for another minute.',
+        ]);
+
+        setPrepTime('1');
+        setCookTime('2');
         setServings('4');
     };
 
@@ -47,14 +61,14 @@ const CreateRecipe: React.FC = () => {
 
     const handleAddIngredient = () => {
         if (ingredient) {
-            setIngredients([...ingredients, ingredient]);
+            setIngredients([...ingredients, ingredient.replace(',', '，')]);
             setIngredient('');
         }
     };
 
     const handleAddStep = () => {
         if (step) {
-            setSteps([...steps, step]);
+            setSteps([...steps, step.replace(',', '，')]);
             setStep('');
         }
     };
