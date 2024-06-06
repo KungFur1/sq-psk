@@ -16,6 +16,11 @@ const SearchResult: React.FC = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+
     const fetchData = async () => {
 
         const searchTerm = localStorage.getItem('searchTerm');
@@ -90,7 +95,7 @@ const SearchResult: React.FC = () => {
                                         key={recipe.id}
                                         id={recipe.id}
                                         title={recipe.title}
-                                        duration={`X min.`}
+                                        duration={`${getRandomInt(30)} min.`}
                                         rating={4}
                                         imageId={recipe.imageId}
                                     />
