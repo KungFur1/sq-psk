@@ -5,10 +5,14 @@ import defaultServerConfig from "../common/server-info.ts";
 import Recipe from "../types/Recipe.ts";
 import '../styles/CreateRecipe.css';
 import '../styles/TextArea.css';
+import {useNavigate} from "react-router-dom";
+import Button from "../components/Button.tsx";
 
 const CreateRecipe: React.FC = () => {
     const {apiUrl} = defaultServerConfig;
     const {key} = JSON.parse(localStorage.getItem('sessionInfo'));
+
+    const navigate = useNavigate();
 
     const [recipeName, setRecipeName] = useState('');
     const [description, setDescription] = useState('');
@@ -20,6 +24,18 @@ const CreateRecipe: React.FC = () => {
     const [ingredient, setIngredient] = useState('');
     const [direction, setDirection] = useState('');
     const [image, setImage] = useState<File | null>(null);
+
+    const addFakeData = () => {
+        setRecipeName('lorem ipsum');
+        setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id cursus metus aliquam eleifend mi. ');
+
+        setIngredients([...ingredients, 'test ingredient']);
+        setDirections([...directions, 'test step']);
+
+        setCookTime('1');
+        setPrepTime('2');
+        setServings('4');
+    };
 
     const textareaRef: React.MutableRefObject<HTMLTextAreaElement | null> = useRef(null);
 
@@ -64,7 +80,7 @@ const CreateRecipe: React.FC = () => {
 
         if (!response.ok) {
             console.error(response);
-            throw new Error('Failed to upload image');
+            return '00000000-0000-0000-0000-000000000000';
         }
 
         const data = await response.json();
@@ -102,9 +118,12 @@ const CreateRecipe: React.FC = () => {
                 console.error(response);
                 console.error(await response.json());
                 throw new Error('Network response was not ok');
+                alert('Failed to create recipe');
             }
 
-            console.log('Recipe submitted successfully:', response.data);
+            navigate(`/recipe/${(await response.json()).id}`);
+
+            console.log('Recipe submitted successfully:', response.json());
         } catch (error) {
             console.error('Error submitting recipe:', error);
         }
@@ -228,9 +247,10 @@ const CreateRecipe: React.FC = () => {
                         Publish
                     </button>
                 </form>
+                    <button type='button' onClick={addFakeData}> Add fake data </button>
             </main>
         </div>
-    );
+);
 };
 
 export default CreateRecipe;

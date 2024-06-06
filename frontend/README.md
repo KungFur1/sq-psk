@@ -2,12 +2,14 @@
 
 ## TODO
 
-- [ ] Redirect to my recipes after successful creation
+- [X] Redirect to my recipes after successful creation
 - [X] Grow textarea
+- [ ] Align create recipe with wireframe
+- [ ] Fix inputs in InfoChips
 - [ ] Show errors after unsuccessful:
   - [ ] log-in/registration
   - [ ] recipe creation
-- [ ] Search button
+- [X] Search button
 - [X] My recipes results
 - [ ] Test data
 

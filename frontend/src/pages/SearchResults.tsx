@@ -16,40 +16,35 @@ const SearchResult: React.FC = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
-    useEffect( () => {
-        const searchTerm = searchParams.get("q") || '';
-        console.debug(searchParams.get("q"));
+    const fetchData = async () => {
+
+        const searchTerm = localStorage.getItem('searchTerm');
         setSearchText(searchTerm);
-        console.debug("SEARCH PARAM")
-        console.debug(searchTerm)
 
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${apiUrl}/api/search?q=${searchTerm}`, {
-                    method: "GET",
-                });
-                console.debug(response)
-                let data = await response.json()
-                console.debug(data.results);
-                data = data.results
-                console.debug(data);
-                setRecipes(data);
-                // setRecipes(data.map((recipe: Recipe, index: number) => ({
-                //     ...recipe, id: index
-                // })));
-                setLoading(false);
-            } catch (error) {
-                console.error(error)
-                setError(error);
-                setLoading(false);
-            }
-        };
+        try {
+            const response = await fetch(
+                `${apiUrl}/api/search?searchTerm=${searchTerm}&pageNumber=1&pageSize=100`,
+                { method: "GET", }
+            );
 
+            let data = (await response.json()).results;
+
+            setRecipes(data);
+            setLoading(false);
+        } catch (error) {
+            console.error(error)
+            setError(error);
+            setLoading(false);
+        }
+    };
+
+    useEffect( () => {
         fetchData()
     }, [apiUrl, searchParams]);
 
     const handleSearchClick = (e: React.FormEvent) => {
         e.preventDefault();
+
         navigate(`/search?q=${searchText}`);
     };
 
@@ -64,7 +59,7 @@ const SearchResult: React.FC = () => {
                         type="text"
                         placeholder="Search"
                         value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
+                        onChange={(e) => { setSearchText(e.target.value); localStorage.setItem('searchTerm', e.target.value)}}
                     />
                     <Button
                         text="Search"
@@ -77,21 +72,22 @@ const SearchResult: React.FC = () => {
                         <p>Loading...</p>
                     ) : ( error ? (
                         <p>Error loading recipes: {error.message}</p>
-                    ) : (
-                        <div className="recipe-list">
-                            {recipes.map((recipe) => (
-                                <RecipeCard
-                                    key={recipe.id}
-                                    id={recipe.id}
-                                    title={recipe.title}
-                                    duration={`X min.`}
-                                    rating={4}
-                                    imageUrl={recipe.imageId}
-                                />
-                            ))}
-                        </div>
-
-                    ))
+                    ) : ( (recipes.length == 0) ?
+                        <p> No results </p>
+                    : (
+                            <div className="recipe-list">
+                                {recipes.map((recipe) => (
+                                    <RecipeCard
+                                        key={recipe.id}
+                                        id={recipe.id}
+                                        title={recipe.title}
+                                        duration={`X min.`}
+                                        rating={4}
+                                        imageUrl={recipe.imageId}
+                                    />
+                                ))}
+                            </div>
+                    )))
                 }
             </main>
         </div>
